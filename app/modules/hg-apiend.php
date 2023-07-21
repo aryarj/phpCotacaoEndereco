@@ -16,7 +16,7 @@ class HG_API{
     function request($endpoint = '', $params = array())
     //function request($params = array())
     {
-        $uri = "https://economia.awesomeapi.com.br/json/".$endpoint.$this->key;
+        $uri = "https://cep.awesomeapi.com.br/json/".$this->key;
         //echo '$uri: ';
         //echo $uri;
         //echo '<br>';
@@ -58,22 +58,19 @@ class HG_API{
         return $this->error;
     }
 
-    function dolar_quotation()
+    function endereco()
     {
         //$uri = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL";
         
-        $data = $this->request('last/');
-        $moedaA = $_GET['moeda1'];
-        $moedaB = $_GET['moeda2'];
-        $cambio = $moedaA.$moedaB;
-        //echo $cambio;
-
-        //if(!empty($data) && is_array($data['USDBRL']))
-        if(!empty($data) && is_array($data[$cambio]))
+        $data = $this->request("");
+        //$cep = $_GET['cep'];
+        //echo '$data: ';
+        //var_dump($data);
+        //if(!empty($data) && is_array($data[$cep]))
+        if(!empty($data))
         {
             $this->error=false;
-            //return($data['USDBRL']);
-            return($data[$cambio]);
+            return($data);
         }
         else
         {

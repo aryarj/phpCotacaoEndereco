@@ -42,8 +42,8 @@ if($end==false)
                   <p>CEP: <?php echo $end['cep'];?></p>
                   <p>Endereço: <input type="text" size="40" value="<?php echo $end['address']?>" ></p>
                   <p>Número: <input type="text" required> Complemento <input type="text"></p>
-                  <p>Cidade: <input type="text" value="<?php echo $end['city']?>"></p>
                   <p>Bairro: <input type="text" value="<?php echo $end['district']?>"></p>
+                  <p>Cidade: <input type="text" value="<?php echo $end['city']?>"></p>
                   <p>Estado: <input type="text" value="<?php echo $end['state']?>"></p>
             </div>
         </div>
